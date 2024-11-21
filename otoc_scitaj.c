@@ -1,21 +1,32 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int otocCislo(int cislo);
+long long int otocCislo(long long int cislo);
 
 int main(){
-    int cislo, opacneCislo;
+    long long int cislo, opacneCislo, palindrom;
+    int medzisucet = 0, i = 0;
 
-    scanf("%d", &cislo);
+    scanf("%lld", &cislo);
 
+    do {
     opacneCislo = otocCislo(cislo);
-    printf("%d", opacneCislo);
+    if (cislo == opacneCislo){
+        break;
+    }
+    cislo += opacneCislo;
+    palindrom = otocCislo(cislo);
+    i++;
+    } while (cislo != palindrom);
+
+    printf("%d %lld", i, cislo);
     return 0;
 }
 
-int otocCislo(int cislo){
-    int x = 0;
+long long int otocCislo(long long int cislo){
+    long long int x = 0;
     while(cislo != 0){
-        int cislica = cislo % 10;
+        long long int cislica = cislo % 10;
         x = x * 10 + cislica;
         cislo = cislo / 10;
     }

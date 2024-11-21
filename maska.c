@@ -5,7 +5,7 @@
 int pocetPodsekvencii(char vstupN[], char maska[]);
 
 int main(){
-    char vstupN[200];
+    char vstupN[300];
     char maska[4];
     int x;
     
@@ -17,7 +17,7 @@ int main(){
 
     x = pocetPodsekvencii(vstupN, maska);
 
-    printf("%d", x);
+    printf("%d ", x);
 
 
 }
