@@ -8,6 +8,8 @@ int overStlpec(int data[][MAX]);
 int neparne(int parnost[]);
 int parne(int parnost[]);
 
+
+
 int main(){
     int data[MAX][MAX];
     int x, y;
