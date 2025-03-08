@@ -8,8 +8,6 @@ int overStlpec(int data[][MAX]);
 int neparne(int parnost[]);
 int parne(int parnost[]);
 
-
-
 int main(){
     int data[MAX][MAX];
     int x, y;
@@ -25,7 +23,7 @@ int main(){
 
     for(int i = 0; i < MAX; i++){
         for(int j = 0; j < MAX; j++){
-            printf("%d", data[i][j]);
+            printf("%d ", data[i][j]);
         }
         printf("\n");
     }
