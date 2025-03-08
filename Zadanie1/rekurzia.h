@@ -1,0 +1,1 @@
+void obrat_Re(int pole[], int lavy, int pravy);
