@@ -1,3 +1,9 @@
+/**
+ * @file iteracia.cpp
+ * @author Lukáš Kamen
+ * @date 10.3.2025
+ */
+
 #include "iteracia.h"
 #include <iostream>
 
