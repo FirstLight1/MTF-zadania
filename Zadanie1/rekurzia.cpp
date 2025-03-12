@@ -2,6 +2,8 @@
  * @file rekurzia.cpp
  * @author Lukáš Kamen
  * @date 10.3.2025
+ * @brief Funkcia na obrátenie poradia prvkov v poli rekurzívnou metódou.
+ * 
  */
 
 #include "rekurzia.h"
