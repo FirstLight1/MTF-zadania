@@ -1,8 +1,8 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
-#include "shellSort.h"
-//#include "mergeSort.h"
+//#include "shellSort.h"
+#include "mergeSort.h"
 
 #define nLogN 10000000
 #define n2 50000
@@ -11,38 +11,17 @@ using namespace std;
 
 void randomNumbers(unsigned int *arr);
 
-void shellSortwiki(unsigned int * array, int dlzka) {
-    int gap = dlzka / 2;
-    while (gap > 0) { //dokud mame co porovnavat
-        for (int i = 0; i < dlzka - gap; i++) { //upraveny insertion sort
-            int j = i + gap;
-            int tmp = array[j];
-            while (j >= gap && tmp < array[j - gap]) {
-                array[j] = array[j - gap];
-                j -= gap;
-            }
-            array[j] = tmp;
-        }
-        if (gap == 2) { //zmena velikosti mezery
-            gap = 1;
-        } else {
-            gap /= 2.2;
-        }
-    }
-}
-
-
 int main(){
     srand(time(NULL));
     //unsigned int *arr = new unsigned int[20];
     
-    
+    int dlzka = 10;
     unsigned int arr[] = {3, 5, 7, 1, 6, 2, 9, 8, 4, 0};
     //randomNumbers(arr);
-    int stred = 5 / 2;
-    shellSort(arr, 10, stred);
-    //shellSortwiki(arr, 10);
-
+    //int stred = 10 / 2;
+    //shellSort(arr, 10, stred);
+    mergeSort(arr, 0, dlzka);
+    
     
     for (int i = 0; i < 10; i++)
     {
