@@ -21,28 +21,26 @@ int main(){
     unsigned int *arr1 = new unsigned int[n2];
     unsigned int *arr2 = new unsigned int[n2];
     
-    double shellT1, shellT2, shellT3, mergeT1, mergeT2, mergeT3;
+    double tShell = 0.0, tMerge = 0.0;
     
     int stred = n2 / 2;
 
-    vytvorArr(arr1, arr2, n2);
-    shellT1 = zmerajCas(*shellSort, arr1, stred, n2);
-    mergeT1 = zmerajCas(*mergeSort, arr2, 0 ,n2);
-    
-    vytvorArr(arr1, arr2, n2);
-    shellT2 = zmerajCas(*shellSort, arr1, stred, n2);
-    mergeT2 = zmerajCas(*mergeSort, arr2, 0 ,n2);
-    
-    vytvorArr(arr1, arr2, n2);
-    shellT3 = zmerajCas(*shellSort, arr1, stred, n2);
-    mergeT3 = zmerajCas(*mergeSort, arr2, 0 ,n2);
+    for (int i = 0; i < 3; i++)
+    {   
+        double cas;
 
-    double priemer;
-    priemer = (shellT1 + shellT2 + shellT3) / 3;
-    cout<<"Priemerny čas shell sortu:"<<priemer<<endl;
+        vytvorArr(arr1, arr2, n2);
+        cas = zmerajCas(*shellSort, arr1, stred, n2);
+        tShell += cas;
+        cout<<"i:"<<i + 1<<" shell cas:"<<cas<<endl;
 
-    priemer = (mergeT1 + mergeT2 + mergeT3) / 3;
-    cout<<"Priemerny čas merge sortu:"<<priemer<<endl;
+        cas += zmerajCas(*mergeSort, arr2, 0 ,n2);
+        tMerge += cas;
+        cout<<"merge cas:"<<cas<<endl;
+    }
+
+    cout<<"Priemerny čas shell sortu:"<<tShell / 3<<endl;
+    cout<<"Priemerny čas merge sortu:"<<tMerge / 3<<endl;
     
     delete[] arr1;
     delete[] arr2;
@@ -64,7 +62,7 @@ void vytvorArr(unsigned int *arr1, unsigned int *arr2, int dlzka){
 }
 
 bool zoradene(unsigned int *arr, int dlzka){
-    for (int i = 0; i < dlzka; i++){
+    for (int i = 0; i < dlzka - 1; i++){
         if (arr[i] > arr[i+1])
         {
             return false;
