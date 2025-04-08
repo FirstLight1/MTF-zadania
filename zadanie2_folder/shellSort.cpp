@@ -1,6 +1,6 @@
 #include "shellSort.h"
 
-void shellSort(unsigned int *arr, int dlzka, int gap){
+void shellSort(unsigned int *arr, int gap, int dlzka){
     
     if (gap < 1){
         return;

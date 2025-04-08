@@ -2,7 +2,7 @@
 extern "C" {
 #endif
 
-void shellSort(unsigned int * array, int dlzka, int gap);
+void shellSort(unsigned int * array, int gap, int dlzka);
 
 #ifdef __cplusplus
 }
